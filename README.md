@@ -1,4 +1,4 @@
-# mean_fl
+# Meals App
 
 A new Flutter project.
 

@@ -1,4 +1,4 @@
-package com.example.mean_fl
+package com.example.meal_fl
 
 import io.flutter.embedding.android.FlutterActivity
 

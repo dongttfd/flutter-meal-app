@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mean_fl">
+    package="com.example.meal_fl">
    <application
-        android:label="mean_fl"
+        android:label="meal_fl"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

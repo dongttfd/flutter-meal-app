@@ -1,6 +1,6 @@
 {
-    "name": "mean_fl",
-    "short_name": "mean_fl",
+    "name": "meal_fl",
+    "short_name": "meal_fl",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
