@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'package:meal/screens/tabs_screen.dart';
 import 'package:meal/screens/category_meals_screen.dart';
+import 'package:meal/screens/filters_screen.dart';
 import 'package:meal/screens/meal_detail_screen.dart';
-import 'package:meal/screens/categories_screen.dart';
 import 'package:meal/screens/not_found_screen.dart';
 
 void main() {
@@ -35,9 +36,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (_) => CategoriesScreen(),
+        '/': (_) => TabsScreen(),
         CategoryMealsScreen.routeName: (_) => CategoryMealsScreen(),
-        MealDetailScreen.routeName: (_) => MealDetailScreen(), 
+        MealDetailScreen.routeName: (_) => MealDetailScreen(),
+        FiltersScreen.routeName: (_) => FiltersScreen(),
       },
       // onGenerateRoute: (RouteSettings setting) {
       //   print(setting.name);
@@ -45,7 +47,6 @@ class MyApp extends StatelessWidget {
       onUnknownRoute: (RouteSettings setting) {
         return MaterialPageRoute(builder: (_) => NotFoundScreen());
       },
-
     );
   }
 }
