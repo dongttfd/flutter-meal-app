@@ -11,7 +11,9 @@ class MealDetailScreen extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.headline6.copyWith(
+                color: Theme.of(context).primaryColor,
+              ),
         ),
       );
 
@@ -85,6 +87,10 @@ class MealDetailScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.delete),
+        onPressed: () => Navigator.of(context).pop(meal.id),
       ),
     );
   }

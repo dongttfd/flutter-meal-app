@@ -5,8 +5,12 @@ import 'package:meal/screens/meal_detail_screen.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
+  final Function removeMeal;
 
-  const MealItem(this.meal);
+  const MealItem(
+    this.meal,
+    this.removeMeal,
+  );
 
   String get complexityText {
     switch (meal.complexity) {
@@ -14,8 +18,10 @@ class MealItem extends StatelessWidget {
         return 'Simple';
       case Complexity.Challenging:
         return 'Challenging';
-      default:
+      case Complexity.Hard:
         return 'Hard';
+      default:
+        return 'Unknow';
     }
   }
 
@@ -25,18 +31,22 @@ class MealItem extends StatelessWidget {
         return 'Affordable';
       case Affordability.Pricey:
         return 'Pricey';
-      default:
+      case Affordability.Luxurious:
         return 'Luxurious';
+      default:
+        return 'Unknow';
     }
   }
 
   void selectMeal(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
       MealDetailScreen.routeName,
-      arguments: {
-        'meal': meal
-      },
-    );
+      arguments: {'meal': meal},
+    ).then((result) {
+      if (result != null) {
+        removeMeal(result);
+      }
+    });
   }
 
   @override
